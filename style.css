@@ -61,7 +61,7 @@
     height: 4.98vw;
     clip-path: polygon(0 0, 0 100%, 100% 100%);
     /* margin: 1px; */
-    animation: my-scale-up 50ms ease-out forwards;
+    animation: my-scale-up 50ms ease-out forwards ;
 }
 
 .block-odd{
@@ -76,8 +76,7 @@
     }
 
     50%{
-        opacity: .5;
-        transform: scale(.5);
+        opacity: 1;
         background: url(download.jpg);
         background-size: cover;
         background-position: center;
@@ -86,8 +85,27 @@
 
     100%{
         opacity: 1;
+        background: url(download.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+}
+
+
+
+@keyframes back-to-color {
+    0%{
         transform: scale(1);
         background: url(download.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    100%{
+        background: violet;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
