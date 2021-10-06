@@ -28,7 +28,7 @@
     padding: 40px;
     max-width: 60vw;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 100%, 0 0);
-    padding-right: 15vw;
+    padding-right: 16vw;
     position: absolute;
     left:0;
     z-index: 6;
@@ -64,8 +64,8 @@
 .block {
     position: relative;
     display: block;
-    width: 5vw;
-    height: 5vw;
+    width: 8vw;
+    height: 8vw;
     clip-path: polygon(0 0, 0% 100%, 50% 50%);
     /* margin: 1px; */
     animation: my-scale-up 50ms ease-out forwards;
@@ -79,19 +79,19 @@
 .block-2 {
     clip-path: polygon(0 0, 100% 0, 50% 50%);
     animation: my-scale-up 200ms ease-out forwards;
-    margin-left: -5vw !important;
+    margin-left: -8vw !important;
 }
 
 .block-3 {
     animation: my-scale-up 150ms ease-out forwards;
     clip-path: polygon(100% 100%, 100% 0, 50% 50%);
-    margin-left: -5vw !important;
+    margin-left: -8vw !important;
 }
 
 .block-4 {
     animation: my-scale-up 100ms ease-out forwards;
     clip-path: polygon(100% 100%, 0 100%, 50% 50%);
-    margin-left: -5vw !important;
+    margin-left: -8vw !important;
 }
 
 @keyframes my-scale-up {
