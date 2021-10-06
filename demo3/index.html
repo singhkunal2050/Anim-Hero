@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+
+        <section class="hero">
+
+
+            <div class="hero__inner">
+
+                <div class="hero__triangleLayer">
+
+                    <h1>Lorem ipsum dolor sit.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a, obcaecati maiores ratione fugit labore rerum? Explicabo officiis quaerat nobis?</p>
+                    <button>Click Me</button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section class="about">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora esse beatae libero aut aspernatur, dolorem quos deserunt earum eum optio voluptates perspiciatis molestias possimus id fugiat porro delectus temporibus repellendus.</p>
+        </section>
+
+
+    </body>
+    <script>
+        let hero = document.querySelector('.hero')
+
+
+        for (let i = 1; i < 1200; i++) {
+            hero.innerHTML += `
+        <div class="block"></div>
+        `
+        }
+
+        let block = document.querySelectorAll('.block')
+        let size = 4.85
+
+        for (let i = 1; i < 1200; i++) {
+            // block[i].style.background = `rgb(${i*145%256} , ${i*999%256} ,${i*111%256})`;
+            block[i].style.animationDelay = `${i*Math.random() * .03}s`;
+
+            if (i % 2 == 0) {
+                if (i % 4 == 0) {
+                    block[i].classList.add('block-4')
+                } else {
+                    block[i].classList.add('block-2')
+                }
+            } else {
+                if (i % 4 == 1) {
+                    block[i].classList.add('block-1')
+                } else {
+                    block[i].classList.add('block-3')
+                }
+            }
+
+            block[i].style.margin = "1px"
+
+        }
+    </script>
+
+    </html>
