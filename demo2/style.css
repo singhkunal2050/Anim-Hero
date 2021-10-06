@@ -79,7 +79,7 @@
 .block-2 {
     clip-path: polygon(0 0, 100% 0, 50% 50%);
     animation: my-scale-up 200ms ease-out forwards;
-    margin-left: -5.1vw !important;
+    margin-left: -5vw !important;
 }
 
 .block-3 {
