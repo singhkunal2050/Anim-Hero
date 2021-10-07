@@ -17,12 +17,12 @@
     background: linear-gradient(90deg, gold 0%, rgba(253, 29, 29, 1) 50%, gold 100%);
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .hero__inner {
     min-height: 100vh;
-    background: rgb(32, 33, 34);
+    background: rgb(12, 12, 12);
     display: flex;
     align-items: center;
     padding: 40px;
@@ -30,14 +30,14 @@
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 100%, 0 0);
     padding-right: 15vw;
     position: absolute;
-    left:0;
+    left: 0;
     z-index: 6;
-/*     opacity: 0; */
+    /*     opacity: 0; */
 }
 
 @media(max-width:728px) {
     .hero__inner {
-        background: brown;
+        background: rgba(20, 20, 20, 0.568);
         clip-path: unset;
         max-width: 100vw;
     }
@@ -100,8 +100,8 @@
         /* transform: scale(0); */
     }
     50% {
-/*         transform:skew(45deg ,0); causes edge case for firefox */
-      opacity: 1;
+        /*         transform:skew(45deg ,0); causes edge case for firefox */
+        opacity: 1;
         background: url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/download.jpg);
         background-size: cover;
         background-position: center;
@@ -145,4 +145,23 @@
 .about p {
     font-size: 3rem;
     font-weight: bold;
+}
+
+@media(max-width:728px) {
+    .block {
+        width: 12vw;
+        height: 12vw;
+    }
+    .block-1 {
+        margin-left: 0 !important;
+    }
+    .block-2 {
+        margin-left: -12vw !important;
+    }
+    .block-3 {
+        margin-left: -12.1vw !important;
+    }
+    .block-4 {
+        margin-left: -12vw !important;
+    }
 }
