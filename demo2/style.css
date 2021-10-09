@@ -70,6 +70,7 @@
     /* margin: 1px; */
     animation: my-scale-up 50ms ease-out forwards;
     margin: 0 !important;
+    filter: grayscale(1);
 }
 
 .block-1 {
@@ -110,23 +111,6 @@
     100% {
         opacity: 1;
         background: url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/download.jpg);
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        filter: none;
-    }
-}
-
-@keyframes back-to-color {
-    0% {
-        transform: scale(1);
-        background: url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/download.jpg);
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-    100% {
-        background: violet;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
