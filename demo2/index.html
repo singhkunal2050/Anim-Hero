@@ -30,7 +30,8 @@
     </section>
 
     <section class="about">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora esse beatae libero aut aspernatur, dolorem quos deserunt earum eum optio voluptates perspiciatis molestias possimus id fugiat porro delectus temporibus repellendus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora esse beatae libero aut aspernatur, dolorem quos deserunt earum eum optio voluptates perspiciatis molestias possimus id fugiat porro delectus temporibus repellendus.
+        </p>
     </section>
 
 
@@ -54,26 +55,34 @@
         sum += current
 
         // block[i].style.background = `rgb(${i*145%256} , ${i*999%256} ,${i*111%256})`;
-        block[i].style.animationDelay = `${current}s`;
-        console.log(sum)
+        try {
+            block[i].style.animationDelay = `${current}s`;
+            // console.log(sum)
+            if (i % 2 == 0) {
+                if (i % 4 == 0) {
+                    block[i].classList.add('block-4')
+                } else {
+                    block[i].classList.add('block-2')
+                }
+            } else {
+                if (i % 4 == 1) {
+                    block[i].classList.add('block-1')
+                } else {
+                    block[i].classList.add('block-3')
+                }
+            }
+            block[i].style.margin = "1px"
 
-        if (i % 2 == 0) {
-            if (i % 4 == 0) {
-                block[i].classList.add('block-4')
-            } else {
-                block[i].classList.add('block-2')
-            }
-        } else {
-            if (i % 4 == 1) {
-                block[i].classList.add('block-1')
-            } else {
-                block[i].classList.add('block-3')
-            }
+        } catch {
+            console.warn(`${i} is out of bound`)
         }
 
-        block[i].style.margin = "1px"
 
     }
+
+    setTimeout(function() {
+        document.querySelectorAll('.block').forEach(elem => elem.style.filter = "blur(0)")
+    }, sum);
 </script>
 
 </html>
