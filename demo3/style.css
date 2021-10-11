@@ -117,3 +117,21 @@
         margin-left: -12vw !important;
     }
 }
+
+
+/* about section  */
+
+
+.about {
+    min-height: 100vh;
+    background: gold;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.about p {
+    font-size: 3rem;
+    font-weight: bold;
+}
