@@ -85,6 +85,52 @@
 
     }
 
+    
+function showImage(){
+  $(".block").css( {"filter": "grayscale(1)"} );
+  
+  var hexagon = $('.block').toArray();
+  TweenMax.set(hexagon, {alpha: 0});
+  hexagon.sort(function(){return 0.5-Math.random()});
+  TweenMax.staggerTo(hexagon, 0.15, {
+    alpha: 1, ease: Quad.easeInOut , 
+    onComplete:console.log('d0'), onCompleteParams:["{self}"]
+  }, 0.001, colorifyandLoop );
+}
+
+function colorifyandLoop(){
+  $(".block").css( {"filter": "blur(0)"} );
+  setTimeout(showGradient , 3000);
+  // alert('coloring')
+}
+
+function showGradient(){
+  $(".block").css( {"filter": "grayscale(1)"} );
+  $(".hero").css( {"background": "url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/prism-min.jpg)" , "background-size":"cover" , "background-repeat":"no-repeat" } );
+  
+  var hexagon = $('.block').toArray();
+  TweenMax.set(hexagon, {alpha: 1});
+  hexagon.sort(function(){return 0.5-Math.random()});
+  TweenMax.staggerTo(hexagon, .15, {
+    alpha: 0, ease: Quad.easeInOut ,
+    onComplete:console.log('d0'), onCompleteParams:["{self}"] 
+  } , 0.001, ()=>{
+    setTimeout(showImage , 3000)
+  } );
+
+  
+}
+
+
+$("#btn1").click(showImage);
+
+$("window").ready(showImage);
+
+$("#btn2").click(showGradient);
+
+
+
+    
     // setTimeout(function() {
     //     document.querySelectorAll('.block').forEach(elem => elem.style.filter = "blur(0)")
     // }, sum);
