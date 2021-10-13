@@ -86,9 +86,19 @@
     }
 
     
+    
+let imagesCollection = [
+  'https://github.com/singhkunal2050/Anim-Hero/blob/gh-pages/corporate-min.jpg?raw=true',
+  'https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/image2-edited.jpg'
+]
+
+let counter = 0;
+
 function showImage(){
-  $(".block").css( {"filter": "grayscale(1)"} );
   
+  $(".block").css( {"background": "url("  + imagesCollection[counter] + ")" , "background-size":"cover" , "background-repeat":"no-repeat"  , "background-attachment":"fixed"  , "background-position":"center" } );
+  counter = (counter + 1)%2 
+  $(".block").css( {"filter": "grayscale(1)"} );
   var hexagon = $('.block').toArray();
   TweenMax.set(hexagon, {alpha: 0});
   hexagon.sort(function(){return 0.5-Math.random()});
