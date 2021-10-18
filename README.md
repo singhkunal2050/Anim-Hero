@@ -1,7 +1,7 @@
 # Anim-Hero
 
 
-![Demo](/demo.gif "Demo")
+![Demo](/chrome-capture.gif "Demo")
 
 https://singhkunal2050.github.io/Anim-Hero/demo3/
 
