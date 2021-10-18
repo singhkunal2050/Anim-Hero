@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+
+.hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* background: url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/download.jpg); */
+    background: rgb(131, 58, 180);
+    background: url('https://images.unsplash.com/photo-1579547945156-1f19a38202b5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8Z3JhZGllbnR8fHx8fHwxNjMzOTcwODY2&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=500');
+  background-size:cover;
+  background-repeat:no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.hero__inner {
+    min-height: 100vh;
+    background: rgb(12, 12, 12);
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    max-width: 60vw;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 100%, 0 0);
+    padding-right: 15vw;
+    position: absolute;
+    left: 0;
+    z-index: 6;
+    /*     opacity: 0; */
+}
+
+@media(max-width:728px) {
+    .hero__inner {
+        background: rgba(29, 29, 29, 0.986);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 100%, 0 0);
+        max-width: 100%;
+    }
+}
+
+.hero__inner h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.hero__inner p {
+    color: white;
+    padding: 20px 0;
+}
+
+.hero__inner button {
+    padding: 1rem 1.5rem;
+    background: linear-gradient(90deg, rgba(253, 29, 29, 1), rgba(252, 176, 69, 1) 100%);
+    color: snow;
+    border: 0;
+    font-weight: bold;
+}
+
+.block {
+    position: relative;
+    display: block;
+    width: 6vw;
+    height: 6vw;
+    clip-path: polygon(0 0, 0% 100%, 50% 50%);
+    /* margin: 1px; */
+    animation: my-scale-up 50ms ease-out forwards;
+    margin: 0 !important;
+    filter: grayscale(1);
+    background: url(https://github.com/singhkunal2050/Anim-Hero/blob/gh-pages/corporate-min.jpg?raw=true);
+     background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.block-1 {
+    margin-left: 0 !important;
+}
+
+.block-2 {
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    margin-left: -5.9vw !important;
+}
+
+.block-3 {
+    clip-path: polygon(100% 100%, 100% 0, 50% 50%);
+    margin-left: -5.9vw !important;
+}
+
+.block-4 {
+    clip-path: polygon(100% 100%, 0 100%, 50% 50%);
+    margin-left: -6.1vw !important;
+}
+
+
+@media(max-width:728px) {
+    .block {
+        width: 12vw;
+        height: 12vw;
+    }
+    .block-1 {
+        margin-left: 0 !important;
+    }
+    .block-2 {
+        margin-left: -11.9vw !important;
+    }
+    .block-3 {
+        margin-left: -11.9vw !important;
+    }
+    .block-4 {
+        margin-left: -12vw !important;
+    }
+}
+
+/* about section  */
+
+
+.about {
+    min-height: 100vh;
+    background: gold;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.about p {
+    font-size: 3rem;
+    font-weight: bold;
+}
