@@ -1,1 +1,135 @@
 
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+
+        <section class="hero">
+
+
+            <div class="hero__inner">
+
+                <div class="hero__triangleLayer">
+
+                    <h1>Lorem ipsum dolor sit.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a, obcaecati maiores ratione fugit labore rerum? Explicabo officiis quaerat nobis?</p>
+                    <button>Click Me</button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section class="about">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora esse beatae libero aut aspernatur, dolorem quos deserunt earum eum optio voluptates perspiciatis molestias possimus id fugiat porro delectus temporibus repellendus.</p>
+        </section>
+
+
+    </body>
+    <script>
+        let hero = document.querySelector('.hero')
+
+
+        for (let i = 1; i < 1200; i++) {
+            hero.innerHTML += `
+        <div class="block"></div>
+        `
+        }
+
+        let block = document.querySelectorAll('.block')
+        let size = 4.85
+
+        for (let i = 1; i < 1200; i++) {
+            // block[i].style.background = `rgb(${i*145%256} , ${i*999%256} ,${i*111%256})`;
+            block[i].style.animationDelay = `${i*Math.random() * .005}s`;
+
+            if (i % 2 == 0) {
+                if (i % 4 == 0) {
+                    block[i].classList.add('block-4')
+                } else {
+                    block[i].classList.add('block-2')
+                }
+            } else {
+                if (i % 4 == 1) {
+                    block[i].classList.add('block-1')
+                } else {
+                    block[i].classList.add('block-3')
+                }
+            }
+
+            block[i].style.margin = "1px"
+
+        }
+      
+      
+      
+let imagesCollection = [
+  'https://github.com/singhkunal2050/Anim-Hero/blob/gh-pages/corporate-min.jpg?raw=true',
+  'https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/image2-edited.jpg'
+]
+
+let counter = 0;
+
+function showImage(){
+  
+  $(".block").css( {"background": "url("  + imagesCollection[counter] + ")" , "background-size":"cover" , "background-repeat":"no-repeat"  , "background-attachment":"fixed"  , "background-position":"center" } );
+  counter = (counter + 1)%2 
+  $(".block").css( {"filter": "grayscale(1)"} );
+  var hexagon = $('.block').toArray();
+  TweenMax.set(hexagon, {alpha: 0,
+                         transform: "matrix(1, 4.5, 1.7, 1.5, 4.2, 1.5)",
+                        });
+  hexagon.sort(function(){return 0.5-Math.random()});
+  TweenMax.staggerTo(hexagon, 0.15, {
+    alpha: 1, transform:"unset" , ease: Quad.easeInOut ,
+    onComplete:console.log('d0'), onCompleteParams:["{self}"]
+  }, 0.009, colorifyandLoop );
+}
+
+function colorifyandLoop(){
+  $(".block").css( {"filter": "blur(0)"} );
+  setTimeout(showGradient , 3000);
+  // alert('coloring')
+}
+
+function showGradient(){
+  $(".block").css( {"filter": "grayscale(1)"} );
+  $(".hero").css( {"background": "url(https://raw.githubusercontent.com/singhkunal2050/Anim-Hero/gh-pages/prism-min.jpg)" , "background-size":"cover" , "background-repeat":"no-repeat" } );
+  
+  var hexagon = $('.block').toArray();
+  TweenMax.set(hexagon, {alpha: 1 ,
+                        transform: "unset"
+                        });
+  hexagon.sort(function(){return 0.5-Math.random()});
+  TweenMax.staggerTo(hexagon, .15, {
+    alpha: 0, transform: "matrix(1, 0.5, 0.7, 1.5, .2, .5)", ease: Quad.easeInOut ,
+    onComplete:console.log('d0'), onCompleteParams:["{self}"] 
+  } , 0.009, ()=>{
+    setTimeout(showImage , 3000)
+  } );
+
+  
+}
+
+
+// $("#btn1").click(showImage);
+
+$("window").ready(showImage);
+
+// $("#btn2").click(showGradient);
+
+
+
+    </script>
+
+    </html>
