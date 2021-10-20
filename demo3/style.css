@@ -77,6 +77,8 @@
      background-size: cover;
   background-position: center;
   background-attachment: fixed;
+    transition:filter 3s ease;
+    opacity:0;
 }
 
 .block-1 {
