@@ -88,7 +88,7 @@
      background-size: cover;
   background-position: center;
   background-attachment: fixed;
-    transition:filter 3s ease;
+    transition: opacity 400ms ease , filter 3s ease;
     opacity:0;
 }
 
